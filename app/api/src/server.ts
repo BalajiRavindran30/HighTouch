@@ -2,7 +2,7 @@
  * Main entry point: Start Express App
  */
 
-import * as errorHandler from "errorhandler";
+//import * as errorHandler from "errorhandler";
 import * as http from 'http';
 import * as https from 'https';
 import * as fs from 'fs';
@@ -11,7 +11,7 @@ import { AddressInfo } from "net";
 const app = require("./app");
 
 // Error Handler. Provides full stack - remove for production
-app.use(errorHandler());
+//app.use(errorHandler());
 
 // If running in Heroku then run 'http' server, else run 'https' server
 // See: https://stackoverflow.com/questions/28472113/is-there-a-programmatic-way-to-know-a-node-js-app-is-running-in-heroku
