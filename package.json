@@ -6,6 +6,9 @@
       "app/*"
     ]
   },
+  "engines": {
+    "node": "16.11.31"
+  },
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "start:api": "npm --prefix app/api start",
