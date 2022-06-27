@@ -2701,6 +2701,7 @@
     "ejs" "^3.1.7"
     "express" "^4.18.0"
     "helmet" "^5.0.2"
+    "https" "^1.0.0"
     "jsonwebtoken" "^8.5.1"
     "morgan" "^1.10.0"
     "passport" "^0.5.2"
@@ -2747,7 +2748,7 @@
   "version" "2.1.2"
 
 "array-flatten@1.1.1":
-  "integrity" "sha1-ml9pkFGx5wczKPKgCJaLZOopVdI= sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg=="
+  "integrity" "sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg=="
   "resolved" "https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz"
   "version" "1.1.1"
 
@@ -2814,7 +2815,7 @@
   "version" "3.2.3"
 
 "asynckit@^0.4.0":
-  "integrity" "sha1-x57Zf380y48robyXkLzDZkdLS3k= sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q=="
+  "integrity" "sha1-x57Zf380y48robyXkLzDZkdLS3k=sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q=="
   "resolved" "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz"
   "version" "0.4.0"
 
@@ -3132,7 +3133,7 @@
     "node-int64" "^0.4.0"
 
 "buffer-equal-constant-time@1.0.1":
-  "integrity" "sha1-+OcRMvf/5uAaXJaXpMbz5I1cyBk= sha512-zRpUiDwd/xk6ADqPMATG8vc9VPrkck7T07OIx0gnjmJAnHnTVXNQG3vfvWNuiZIkwu9KrKdA1iJKfsfTVxE6NA=="
+  "integrity" "sha1-+OcRMvf/5uAaXJaXpMbz5I1cyBk=sha512-zRpUiDwd/xk6ADqPMATG8vc9VPrkck7T07OIx0gnjmJAnHnTVXNQG3vfvWNuiZIkwu9KrKdA1iJKfsfTVxE6NA=="
   "resolved" "https://registry.npmjs.org/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz"
   "version" "1.0.1"
 
@@ -9993,10 +9994,10 @@
   "resolved" "https://registry.npmjs.org/webpack-sources/-/webpack-sources-3.2.3.tgz"
   "version" "3.2.3"
 
-"webpack@^4.0.0 || ^5.0.0", "webpack@^4.37.0 || ^5.0.0", "webpack@^4.4.0 || ^5.9.0", "webpack@^4.44.2 || ^5.47.0", "webpack@^5.0.0", "webpack@^5.1.0", "webpack@^5.20.0", "webpack@^5.64.4", "webpack@^5.72.1", "webpack@>= 4", "webpack@>=2", "webpack@>=4.43.0 <6.0.0", "webpack@4.x.x || 5.x.x":
-  "integrity" "sha512-dXG5zXCLspQR4krZVR6QgajnZOjW2K/djHvdcRaDQvsjV9z9vaW6+ja5dZOYbqBBjF6kGXka/2ZyxNdc+8Jung=="
-  "resolved" "https://registry.npmjs.org/webpack/-/webpack-5.72.1.tgz"
-  "version" "5.72.1"
+"webpack@^4.0.0 || ^5.0.0", "webpack@^4.37.0 || ^5.0.0", "webpack@^4.4.0 || ^5.9.0", "webpack@^4.44.2 || ^5.47.0", "webpack@^5.0.0", "webpack@^5.1.0", "webpack@^5.20.0", "webpack@^5.64.4", "webpack@^5.73.0", "webpack@>= 4", "webpack@>=2", "webpack@>=4.43.0 <6.0.0", "webpack@4.x.x || 5.x.x":
+  "integrity" "sha512-svjudQRPPa0YiOYa2lM/Gacw0r6PvxptHj4FuEKQ2kX05ZLkjbVc5MnPs6its5j7IZljnIqSVo/OsY2X0IpHGA=="
+  "resolved" "https://registry.npmjs.org/webpack/-/webpack-5.73.0.tgz"
+  "version" "5.73.0"
   dependencies:
     "@types/eslint-scope" "^3.7.3"
     "@types/estree" "^0.0.51"
