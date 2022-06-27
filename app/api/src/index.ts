@@ -46,7 +46,7 @@ const sfmcOAuthCallbackPath = "/oauth2/sfmc/callback";
 // const vimeoOAuthCallbackPath = "/oauth2/vimeo/callback";
 
 const defaultAxiosClient = axios.create();
-
+const PORT = process.env.PORT || 5000
 const app = express();
 app.set("views", join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -55,6 +55,7 @@ app.set("view engine", "ejs");
 // inside files with the .html extension instead of .ejs.
 app.engine("html", ejs.renderFile);
 app.use(cors);
+app.set("port", PORT);
 // Add the request logging middleware.
 // Use the `dev` predefined format for local development purposes
 // so that we get colored log output, but for all other times
