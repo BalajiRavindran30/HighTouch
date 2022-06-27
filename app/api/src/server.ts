@@ -5,7 +5,7 @@
 import * as errorHandler from "errorhandler";
 import * as http from 'http';
 import * as https from 'https';
-import fs = require('fs');
+import * as fs from 'fs';
 import { AddressInfo } from "net";
 
 const app = require("./app");
