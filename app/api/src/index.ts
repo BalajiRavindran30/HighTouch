@@ -15,7 +15,6 @@ import helmet from "helmet";
 import csurf from "csurf";
 import ejs from "ejs";
 import morgan from "morgan";
-import cors from 'cors';
 
 import { AccessTokenResponse } from "sfmc";
 
@@ -23,8 +22,7 @@ import { getAppConfig, getAppPort, isDev } from "./config";
 import {
     getCookieOptions,
     ONE_HOUR_IN_SECONDS,
-    TWENTY_MINS_IN_SECONDS,
-    //TWO_WEEKS_IN_SECONDS, //Hari - 20.05.22
+    TWENTY_MINS_IN_SECONDS
 } from "./cookies";
 import { clientErrorHandler, errorHandler } from "./errors";
 
@@ -46,7 +44,7 @@ const sfmcOAuthCallbackPath = "/oauth2/sfmc/callback";
 // const vimeoOAuthCallbackPath = "/oauth2/vimeo/callback";
 
 const defaultAxiosClient = axios.create();
-const PORT = process.env.PORT || 5000
+
 const app = express();
 app.set("views", join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -54,8 +52,7 @@ app.set("view engine", "ejs");
 // function for HTML files. This allows us to use EJS
 // inside files with the .html extension instead of .ejs.
 app.engine("html", ejs.renderFile);
-app.use(cors);
-app.set("port", PORT);
+
 // Add the request logging middleware.
 // Use the `dev` predefined format for local development purposes
 // so that we get colored log output, but for all other times
@@ -124,7 +121,7 @@ app.get(
             `${appConfig.selfDomain}${sfmcOAuthCallbackPath}`
         );
         authUrl.searchParams.append("response_type", "code");
-        console.log("Response:", res);
+
         try {
             // Generate a signed string that can be validated in the callback.
             const state = jwt.sign({}, appConfig.jwtSecret, {
@@ -151,6 +148,7 @@ async function verifyOAuth2Callback(
     next: NextFunction
 ): Promise<string | undefined> {
     const code = req.query.code as string;
+    console.log("Code:::",code);
     if (!code) {
         console.error("SFMC OAuth callback didn't have the code query-param");
         next(new Error("invalid_request: Missing code param"));
@@ -228,6 +226,7 @@ app.get(
 app.post(
     "/oauth2/sfmc/refresh_token",
     async (req: Request, res: Response, next: NextFunction) => {
+        console.log("Request::",JSON.stringify(req))
         if (
             !req.signedCookies["sfmc_tssd"] ||
             !req.signedCookies["sfmc_refresh_token"]
@@ -374,13 +373,13 @@ app.get("/logout", (_req: Request, res: Response) => {
 });
 
 app.get("/*", (req: Request, res: Response) => {
-    console.log("Check");
-
+    let token = req.csrfToken()
+    console.log("XCRF Token ::",token)
     res.cookie("XSRF-Token", req.csrfToken(), getCookieOptions());
 
     if (isDev() && appConfig.redirectUiToLocalhost) {
         console.log("Redirecting to localhost...");
-        res.redirect("https://app.localhost:8080");
+        res.redirect("https://app.localhost:3000");
         return;
     }
     res.sendFile(join(__dirname, "ui", "index.html"));
@@ -393,7 +392,6 @@ if (isDev()) {
         key: readFileSync(join(__dirname, "..", "localhost.key")),
         cert: readFileSync(join(__dirname, "..", "localhost.crt")),
     };
-    console.log(app)
     https.createServer(options, app).listen(443);
 } else {
     app.listen(port, () => console.log(`Listening on port ${port}`));

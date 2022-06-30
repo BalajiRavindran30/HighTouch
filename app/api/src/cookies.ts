@@ -2,7 +2,7 @@ import express from "express";
 import { isDev } from "./config";
 
 export const TWENTY_MINS_IN_SECONDS = 20 * 60;
-//export const TWO_WEEKS_IN_SECONDS = 14 * 24 * 60 * 60; // Hari - 20.05.22
+export const TWO_WEEKS_IN_SECONDS = 14 * 24 * 60 * 60;
 export const ONE_HOUR_IN_SECONDS = 60 * 60;
 
 /**

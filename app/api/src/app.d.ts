@@ -7,9 +7,5 @@ declare module "app" {
         sfmcClientId: string;
         sfmcClientSecret: string;
         sfmcDefaultTenantSubdomain: string;
-        vimeoAuthorizationUrl: string;
-        vimeoClientId: string;
-        vimeoClientSecret: string;
-        vimeoTokenUrl: string;
     }
 }

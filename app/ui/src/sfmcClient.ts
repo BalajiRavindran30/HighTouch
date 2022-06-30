@@ -43,7 +43,7 @@ client.interceptors.response.use(undefined, (err) => {
 
 export async function refreshSfmcToken() {
     try {
-        await client.get("/oauth2/sfmc/authorize");
+        await client.post("/oauth2/sfmc/refresh_token");
         setTimeout(refreshSfmcToken, settings.tokenRefreshInterval);
     } catch (err) {
         console.error(
