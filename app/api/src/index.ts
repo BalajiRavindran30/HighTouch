@@ -204,7 +204,7 @@ app.get(
                 redirect_uri: `${appConfig.selfDomain}${sfmcOAuthCallbackPath}`,
             }
         );
-
+        console.log("Response:",res)
         const accessTokenResp = resp.data;
         res.cookie(
             "sfmc_access_token",
