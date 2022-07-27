@@ -11,6 +11,7 @@ import "./index.css";
 //import "@salesforce-ux/design-system/scss/index.scss";
 
 import App from "./App";
+import React from "react";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
@@ -28,10 +29,12 @@ root.render(
         standardSprite={standardSprite}
         utilitySprite={utilitySprite}
     >
+        <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<App />} />
+                <Route path="*" element={<App />}></Route>
             </Routes>
         </BrowserRouter>
+        </React.StrictMode>       
     </IconSettings>
 );
